@@ -1,0 +1,36 @@
+{
+  "name": "uber-build-monitor",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "build": "webpack --config config/webpack.config.js",
+    "pretest": "docker-compose -f spec/support/docker-compose.yml up -d",
+    "test": "jasmine",
+    "posttest": "docker-compose -f spec/support/docker-compose.yml down",
+    "start": "webpack-dev-server --config config/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volkerw00/uber-build-monitor.git"
+  },
+  "author": "volkerw00",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/volkerw00/uber-build-monitor/issues"
+  },
+  "homepage": "https://github.com/volkerw00/uber-build-monitor#readme",
+  "dependencies": {
+    "preact": "^8.4.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/preset-env": "^7.4.2",
+    "babel-loader": "^8.0.5",
+    "jasmine": "^3.3.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  }
+}

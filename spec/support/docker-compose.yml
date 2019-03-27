@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  jenkins-test-instance:
+    build: .
+    image: uber-build-monitor/jenkins-test
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    environment:
+      - JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
